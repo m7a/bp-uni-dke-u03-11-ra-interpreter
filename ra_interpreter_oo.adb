@@ -28,22 +28,23 @@ use  Query_DB;
 package body RA_Interpreter_OO is
 
 	procedure RA_Interpreter_OO_Main is
-		Active: Boolean := True;
 		D: Database;
 	begin
 		Info;
 		D := Create_Database;
-		while Active loop
+		loop
 			Put("RA> ");
 			Flush;
 			declare
 				Query: String := Get_Line;
 			begin
-				Active := Active and Process_Query(D, Query);
+				if not Process_Query(D, Query) then
+					exit;
+				end if;
 			end;
 		end loop;
 	exception
-		when E: End_Error => null;
+		when End_Error => null;
 	end RA_Interpreter_OO_Main;
 
 	procedure Info is

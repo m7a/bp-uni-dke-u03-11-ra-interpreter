@@ -17,7 +17,6 @@
 --
 --    Notice: You find this copy by interactively typing `gpl` or in `gpl.adb`
 
-with Ada.Strings.Bounded;
 with Ada.Containers.Indefinite_Ordered_Maps;
 with Ada.Containers.Indefinite_Vectors;
 with T_Line;

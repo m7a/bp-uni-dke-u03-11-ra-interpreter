@@ -18,7 +18,7 @@
 #    Notice: You find this copy by interactively typing `gpl` or in `gpl.adb`
 
 all:
-	gnatmake -O3 -j8 ra_interpreter.adb
+	gnatmake -gnatwa -gnatwK -O3 -j8 ra_interpreter.adb
 
 test: test-join2
 

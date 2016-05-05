@@ -157,7 +157,7 @@ package body DB is
 		Is_First: Boolean := True;
 
 		procedure Append_Joined(L_Proto, CL_I: in Line;
-						L_Idx: in out Natural) is
+							L_Idx: in Natural) is
 			L_New: Line := L_Proto; -- Copy (COPIES POINTERS!)
 			L_Idx_New: Natural := L_Idx;
 		begin

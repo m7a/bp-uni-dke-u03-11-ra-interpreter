@@ -48,7 +48,6 @@ package body Query_DB is
 		when Misformatted_Named_Query_Arguments =>
 			Put_Line("Error: Query Parameters for UNION or JOIN " &
 						"are incorrectly formatted.");
-		when others => raise;
 	end Query_DB_And_Print;
 
 	function Evaluate(D: in Database; Q: in String) return Table is
@@ -96,7 +95,7 @@ package body Query_DB is
 	function Ev_Named_Query(D: in Database;
 				Name, Rest: in String) return Table is
 		O: Named_Query := Identify_Named_Query(Name);
-		Level, High_Level_Comma, High_Level_End: Natural := 0;
+		High_Level_Comma, High_Level_End: Natural := 0;
 
 		procedure Update_Comma(C: in Character; I, Level: in Natural) is
 		begin
@@ -161,7 +160,7 @@ package body Query_DB is
 	function Ev_Parametrized_Query(D: in Database;
 				Name, Param, Rest: in String) return Table is
 		O: Parametrized_Query := Identify_Parametrized_Query(Name);
-		Level, High_Level_End: Natural := 0;
+		High_Level_End: Natural := 0;
 
 		procedure Null_Update(C: in Character; I, Level: in Natural) is
 									null;
