@@ -120,7 +120,12 @@ package body DB is
 				for I in H'Range loop
 					NL(I) := Get(L, Select_Indices(I));
 				end loop;
-				Ret.T.Append(NL);
+				-- set operation => no duplicates allowed
+				-- TODO z ISSUE: if a data row is equal to the
+				-- title row, it is not added to the result...
+				if not Ret.T.Contains(NL) then
+					Ret.T.Append(NL);
+				end if;
 			end;
 		end loop;
 		return Ret;
