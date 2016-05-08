@@ -17,7 +17,7 @@ If you are on a Linux system with the GNU Ada Compiler GNAT installed, it should
 be enough to type `make` to build this program. If you want to use Docker, you
 may either build this image with `docker build .` or run it directly with
 
-	docker run --it --rm masysma/uni-dke-u03-11-ra-interpreter
+	docker run -it --rm masysma/uni-dke-u03-11-ra-interpreter
 
 Otherwise, you will need to compile the program with any Ada 2012 compiler.
 The main file is `ra_interpreter.adb`.
