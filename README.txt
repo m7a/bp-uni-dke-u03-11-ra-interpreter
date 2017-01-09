@@ -66,7 +66,7 @@ Now, let's add a condition to the select statement:
 	  csv.ads  32     
 	oooooooooooooooooo
 
-Note the parenthes around the condition, we wrote `SEL[(...)]`. If you consult
+Note the parentheses around the condition, we wrote `SEL[(...)]`. If you consult
 what `help` has to say about this:
 
 	RA> help
