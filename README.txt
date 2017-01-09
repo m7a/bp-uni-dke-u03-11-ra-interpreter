@@ -94,7 +94,7 @@ from `test/t2.csv` as `t2` and perform a join on the two tables:
 
 ... It works as expected joining the two relations on the common field `File`.
 
-Explore the other options by viewing `help`. Most of the work as expected.
+Explore the other options by viewing `help`. Most of them work as expected.
 
 --------------------------------------------------------------------[ Issues ]--
 
