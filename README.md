@@ -1,9 +1,22 @@
-Ma_Sys.ma Relation Algebra Interpreter 1.0.0.0, Copyright (c) 2016 Ma_Sys.ma.
-For further info send an e-mail to Ma_Sys.ma@web.de.
+---
+section: 32
+x-masysma-name: uni/dke/u03/11
+title: "UNI DKE U03/11: Relational Algebra Interpreter"
+date: 2016/05/05 23:55:56
+lang: en-US
+author: ["Linux-Fan, Ma_Sys.ma (Ma_Sys.ma@web.de)"]
+keywords: ["uni", "dke", "relation", "algebra", "interpreter", "ra"]
+x-masysma-version: 1.0.0
+x-masysma-repository: https://www.github.com/m7a/bp-uni-dke-u03-11-ra-interpreter
+x-masysma-owned: 1
+x-masysma-copyright: |
+  Ma_Sys.ma Relation Algebra Interpreter 1.0.0.0, Copyright (c) 2016 Ma_Sys.ma.
+  For further info send an e-mail to Ma_Sys.ma@web.de.
+---
+Introduction
+============
 
---------------------------------------------------------------[ Introduction ]--
-
-The ``Relation Algebra Interpreter'' (or short RA Interpreter) is a program
+The _Relation Algebra Interpreter_ (or short RA Interpreter) is a program
 which can read CSV tables and perform some basic relation algebra on it, that
 is to say: Project, Join and Select operations.
 
@@ -11,7 +24,8 @@ This program was written for learning purposes. If you find it useful for
 anything else, keep in mind, that it was probably not designed to do what you
 want.
 
----------------------------------------------------------------[ Compilation ]--
+Compilation
+===========
 
 If you are on a Linux system with the GNU Ada Compiler GNAT installed, it should
 be enough to type `make` to build this program. If you want to use Docker, you
@@ -22,7 +36,8 @@ may either build this image with `docker build .` or run it directly with
 Otherwise, you will need to compile the program with any Ada 2012 compiler.
 The main file is `ra_interpreter.adb`.
 
----------------------------------------------------------------------[ Usage ]--
+Usage
+=====
 
 The program runs interactively on the console and takes commands as input
 and prints resulting tables directly to the console.
@@ -47,12 +62,12 @@ In order to print a table, select all of its rows:
 
 	RA> SEL[1](t1)
 	ooooooooooooooooooooooooooooo
-	  File                Lines  
+	  File                Lines
 	+++++++++++++++++++++++++++++
-	  gpl.ads             24     
-	  ra_interpreter.adb  26     
-	  csv.ads             32     
-	  func.ads            37     
+	  gpl.ads             24
+	  ra_interpreter.adb  26
+	  csv.ads             32
+	  func.ads            37
 	ooooooooooooooooooooooooooooo
 
 It pretty-printed the relation.
@@ -61,9 +76,9 @@ Now, let's add a condition to the select statement:
 
 	RA> SEL[(File = "csv.ads")](t1)
 	oooooooooooooooooo
-	  File     Lines  
+	  File     Lines
 	++++++++++++++++++
-	  csv.ads  32     
+	  csv.ads  32
 	oooooooooooooooooo
 
 Note the parentheses around the condition, we wrote `SEL[(...)]`. If you consult
@@ -84,28 +99,29 @@ from `test/t2.csv` as `t2` and perform a join on the two tables:
 	RA> load(t2, test/t2.csv)
 	RA> JOIN(t1,t2)
 	ooooooooooooooooooooooooooooooooooooooooo
-	  File                Lines  Size/Bytes  
+	  File                Lines  Size/Bytes
 	+++++++++++++++++++++++++++++++++++++++++
-	  gpl.ads             24     858         
-	  ra_interpreter.adb  26     1038        
-	  csv.ads             32     1126        
-	  func.ads            37     1400        
+	  gpl.ads             24     858
+	  ra_interpreter.adb  26     1038
+	  csv.ads             32     1126
+	  func.ads            37     1400
 	ooooooooooooooooooooooooooooooooooooooooo
 
 ... It works as expected joining the two relations on the common field `File`.
 
 Explore the other options by viewing `help`. Most of them work as expected.
 
---------------------------------------------------------------------[ Issues ]--
+Issues
+======
 
 As this was created for learning purposes, it's features are only rudimentary.
 Especially, you can not
 
- - Recall commands via a history
- - Use another syntax than given there, spaces are sometimes relevant!
- - Do a lot of boolean operations
- - Use fields longer than 256 characters :(
+ * Recall commands via a history
+ * Use another syntax than given there, spaces are sometimes relevant!
+ * Do a lot of boolean operations
+ * Use fields longer than 256 characters :(
 
 Programming Language
-   This was written in Ada as a means of getting to know that language.
-   Thus, there are probably a lot of beginner's mistakes in there...
+:   This was written in Ada as a means of getting to know that language.
+    Thus, there are probably a lot of beginner's mistakes in there...
