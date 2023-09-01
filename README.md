@@ -8,7 +8,7 @@ author: ["Linux-Fan, Ma_Sys.ma (Ma_Sys.ma@web.de)"]
 keywords: ["uni", "dke", "relation", "algebra", "interpreter", "ra"]
 x-masysma-version: 1.0.0
 x-masysma-repository: https://www.github.com/m7a/bp-uni-dke-u03-11-ra-interpreter
-x-masysma-website: https://masysma.lima-city.de/32/uni_dke_u03_11.xhtml
+x-masysma-website: https://masysma.net/32/uni_dke_u03_11.xhtml
 x-masysma-owned: 1
 x-masysma-copyright: |
   Ma_Sys.ma Relation Algebra Interpreter 1.0.0.0, Copyright (c) 2016 Ma_Sys.ma.
